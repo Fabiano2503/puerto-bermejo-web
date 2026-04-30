@@ -1,0 +1,63 @@
+---
+import carta from "../data/carta.json"
+import MenuItem from "./MenuItem.astro";
+---
+
+<section id="menu" class="scroll-mt-15 max-w-4xl mx-auto px-4 py-8">
+  <div class="text-center mb-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+      Nuestro Menú
+    </h2>
+    <p class="text-lg text-slate-600">
+      Descubre los sabores más frescos del mar
+    </p>
+  </div>
+
+  <div
+    class="sticky top-[60px] z-40 bg-slate-50/95 backdrop-blur-sm py-4 mb-8 -mx-4 px-4 border-b border-slate-200 shadow-sm"
+  >
+    <div class="flex overflow-x-auto gap-3 pb-2 snap-x hide-scrollbar">
+      {
+        carta.map((category) => (
+          <a
+            href={`#cat-${category.category
+              .replace(/\\s+/g, "-")
+              .toLowerCase()}`}
+            class="snap-start whitespace-nowrap px-4 py-2 bg-white border border-slate-200 rounded-full text-slate-700 font-medium hover:bg-emerald-50 hover:text-emerald-700 hover:border-emerald-200 transition-colors shadow-sm text-sm"
+          >
+            {category.category}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="space-y-12">
+    {
+      carta.map((category) => (
+        <div
+          id={`cat-${category.category.replace(/\\s+/g, "-").toLowerCase()}`}
+          class="scroll-mt-40"
+        >
+          <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-3">
+            <span class="w-8 h-1.5 bg-sky-400 rounded-full" />
+            {category.category}
+          </h3>
+          <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-2 sm:p-4">
+            <div class="divide-y divide-slate-100">
+              {category.items.map((item) => (
+                <MenuItem
+                  name={item.name}
+                  price={item.price}
+                  prices={item.prices}
+                  description={item.description}
+                  image={(item as any).image}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

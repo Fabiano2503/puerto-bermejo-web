@@ -1,0 +1,155 @@
+[
+  {
+    "category": "Entradas y Tiraditos",
+    "items": [
+      { "name": "Leche de Tigre Clásico", "price": 15 },
+      { "name": "Leche de Tigre con Chicharrón", "price": 20 },
+      { "name": "Chicharrón de Pota", "price": 30 },
+      { "name": "Choritos a la Chalaca (1/2 docena)", "price": 25 },
+      { "name": "Causa de Atún", "price": 18 },
+      { "name": "Causa de Langostinos", "price": 25 },
+      { "name": "Causa de Pulpo al Olivo", "price": 25 },
+      { "name": "Causa de Pulpa de Cangrejo", "price": 28 },
+      {
+        "name": "Tiradito de Pescado",
+        "prices": {
+          "personal": 30,
+          "mediano": 60
+        }
+      },
+      {
+        "name": "Tiradito Bicolor",
+        "prices": {
+          "personal": 35,
+          "mediano": 70
+        }
+      }
+    ]
+  },
+  {
+    "category": "Ceviches",
+    "items": [
+      {
+        "name": "Ceviche de Pescado",
+        "prices": { "personal": 30, "mediano": 60 }
+      },
+      {
+        "name": "Ceviche Mixto",
+        "prices": { "personal": 35, "mediano": 70 }
+      },
+      { "name": "Ceviche Clásico", "price": 38 },
+      { "name": "Ceviche de Conchas Negras", "price": 40 },
+      {
+        "name": "Ceviche Puerto Bermejo",
+        "prices": { "personal": 40, "mediano": 80 }
+      }
+    ]
+  },
+  {
+    "category": "Arroces y Platos de Fondo",
+    "items": [
+      { "name": "Arroz con Mariscos", "prices": { "personal": 30, "mediano": 50 } },
+      { "name": "Arroz con Calamares", "prices": { "personal": 35, "mediano": 70 } },
+      { "name": "Arroz con Langostinos", "prices": { "personal": 35, "mediano": 70 } },
+      { "name": "Arroz con Conchas Negras", "price": 40 },
+      { "name": "Arroz Chaufa de Pescado", "prices": { "personal": 30, "mediano": 50 } },
+      { "name": "Arroz Chaufa de Mariscos", "prices": { "personal": 30, "mediano": 60 } },
+      { "name": "Arroz a la Norteña", "price": 35 },
+      { "name": "Tortilla de Mariscos", "price": 30 },
+      { "name": "Tortilla de Langostinos", "price": 35 },
+      { "name": "Pescado a la Plancha", "price": 30 },
+      { "name": "Pescado Frito", "price": 38 },
+      { "name": "Pescado al Ajo", "price": 40 },
+      { "name": "Pescado a lo Macho", "price": 40 }
+    ]
+  },
+  {
+    "category": "Sopas, Sudados y Parihuelas",
+    "items": [
+      { "name": "Chupe de Pescado", "price": 30 },
+      { "name": "Chupe de Langostinos", "price": 35 },
+      { "name": "Chupe de Camarones", "price": 40 },
+      { "name": "Sudado de Filete", "price": 30 },
+      { "name": "Sudado de Tramboyo", "price": 35 },
+      { "name": "Sudado de Cabrilla", "price": 35 },
+      {
+        "name": "Sudado Mixto",
+        "prices": { "personal": 40, "familiar": 70 }
+      },
+      {
+        "name": "Parihuela (con filete)",
+        "prices": { "personal": 35, "mediano": 70 }
+      },
+      { "name": "Parihuela de Cabrilla", "price": 40 },
+      { "name": "Parihuela de Tramboyo", "price": 45 }
+    ]
+  },
+  {
+    "category": "Frituras y Picantes",
+    "items": [
+      {
+        "name": "Chicharrón de Pescado",
+        "prices": { "personal": 30, "mediano": 60 }
+      },
+      {
+        "name": "Chicharrón de Mixto",
+        "prices": { "personal": 35, "mediano": 52 }
+      },
+      {
+        "name": "Chicharrón de Mariscos",
+        "prices": { "personal": 40, "mediano": 80 }
+      },
+      {
+        "name": "Chicharrón de Calamar",
+        "prices": { "personal": 50, "mediano": 85 }
+      },
+      {
+        "name": "Jalea Simple",
+        "prices": { "personal": 32, "mediano": 60 }
+      },
+      {
+        "name": "Jalea Mixta",
+        "prices": { "personal": 38, "mediano": 65 }
+      },
+      { "name": "Jalea de Mariscos", "price": 45 },
+      {
+        "name": "Jalea Real",
+        "prices": { "personal": 50, "mediano": 80 }
+      },
+      {
+        "name": "Picante de Mariscos",
+        "prices": { "personal": 30, "mediano": 60 }
+      },
+      {
+        "name": "Picante de Langostinos",
+        "prices": { "personal": 35, "mediano": 60 }
+      }
+    ]
+  },
+  {
+    "category": "Combos y Especiales",
+    "items": [
+      { "name": "Combo 01: Ceviche + Chicharrón + Arroz con Mariscos", "price": 25 },
+      { "name": "Combo 02: Ceviche + Arroz Chaufa + Chicharrón", "price": 30 },
+      { "name": "Dúo Marino: Ceviche + Chicharrón de Pescado", "price": 30 },
+      { "name": "Trío Marino: Ceviche + Causa + Jalea", "price": 40 },
+      {
+        "name": "Buffet Marino",
+        "description": "Causa + Arroz + Tiradito + Ceviche + Jalea",
+        "price": 80
+      }
+    ]
+  },
+  {
+    "category": "Bebidas",
+    "items": [
+      { "name": "Gaseosa Personal", "price": 3 },
+      { "name": "Gaseosa 'Gordita'", "price": 5 },
+      { "name": "Gaseosa 1 Litro", "price": 8 },
+      { "name": "Chicha Morada", "price": 15 },
+      { "name": "Chicha de Jora", "price": 15 },
+      { "name": "Cerveza Pilsen", "price": 11 },
+      { "name": "Cerveza Trigo o Negra", "price": 12 }
+    ]
+  }
+]

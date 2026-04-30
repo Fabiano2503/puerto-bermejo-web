@@ -1,0 +1,52 @@
+---
+export interface Props {
+  name: string;
+  price?: number;
+  prices?: {
+    personal?: number;
+    mediano?: number;
+    familiar?: number;
+  };
+  description?: string;
+  image?: string;
+}
+
+const { name, price, prices, description, image } = Astro.props;
+---
+
+<div class="py-4 px-2 hover:bg-slate-50 transition-colors rounded-xl flex gap-4 items-center">
+  {image && (
+    <img src={image} alt={name} class="w-20 h-20 rounded-lg object-cover shadow-sm shrink-0" />
+  )}
+  <div class="flex-1 min-w-0">
+    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3">
+      <div>
+        <h4 class="text-lg font-bold text-slate-900 leading-tight">{name}</h4>
+        {description && <p class="text-sm text-slate-500 mt-1 line-clamp-2">{description}</p>}
+      </div>
+
+      <div class="flex-shrink-0 flex flex-wrap gap-2 items-center">
+        {
+          price !== undefined ? (
+            <span class="inline-flex items-center px-4 py-1.5 rounded-full text-base font-bold bg-emerald-600 text-white shadow-md">
+              S/ {price.toFixed(2)}
+            </span>
+          ) : prices ? (
+            <div class="flex flex-wrap gap-2">
+              {[
+                { label: 'Pers.', value: prices.personal },
+                { label: 'Med.', value: prices.mediano },
+                { label: 'Fam.', value: prices.familiar }
+              ].map(item => item.value !== undefined && (
+                <div class="inline-flex flex-col items-center px-3 py-1 rounded-lg bg-white border border-emerald-200 shadow-sm min-w-[70px]">
+                  <span class="text-[10px] uppercase tracking-wider text-slate-500 font-bold">{item.label}</span>
+                  <span class="text-sm font-bold text-emerald-700">S/ {item.value}</span>
+                </div>
+              ))}
+            </div>
+          ) : null
+        }
+      </div>
+    </div>
+  </div>
+</div>
