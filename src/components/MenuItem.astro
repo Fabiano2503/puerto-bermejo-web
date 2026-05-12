@@ -14,33 +14,43 @@ export interface Props {
 const { name, price, prices, description, image } = Astro.props;
 ---
 
-<div class="py-4 px-2 hover:bg-slate-50 transition-colors rounded-xl flex gap-4 items-center">
+<div class="animate-fade-in opacity-0 py-6 px-4 hover:bg-white transition-all rounded-[24px] flex flex-col sm:flex-row gap-6 items-start sm:items-center group hover:shadow-premium border border-transparent hover:border-[var(--color-accent)]/20">
   {image && (
-    <img src={image} alt={name} class="w-20 h-20 rounded-lg object-cover shadow-sm shrink-0" />
+    <div class="w-full sm:w-36 shrink-0 relative overflow-hidden rounded-[20px] shadow-md group-hover:shadow-lg transition-all duration-500">
+      <img 
+        src={image} 
+        alt={name} 
+        class="w-full aspect-[4/3] sm:aspect-square object-cover transform group-hover:scale-110 transition-transform duration-700" 
+        loading="lazy"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+    </div>
   )}
-  <div class="flex-1 min-w-0">
-    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3">
-      <div>
-        <h4 class="text-lg font-bold text-slate-900 leading-tight">{name}</h4>
-        {description && <p class="text-sm text-slate-500 mt-1 line-clamp-2">{description}</p>}
+  <div class="flex-1 min-w-0 w-full">
+    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+      <div class="flex-1">
+        <h4 class="text-xl md:text-2xl font-bold text-[var(--color-text)] leading-tight group-hover:text-[var(--color-primary)] transition-colors duration-300">
+          {name}
+        </h4>
+        {description && <p class="text-base text-[var(--color-text-soft)] mt-2 leading-relaxed line-clamp-2 md:line-clamp-none">{description}</p>}
       </div>
 
-      <div class="flex-shrink-0 flex flex-wrap gap-2 items-center">
+      <div class="flex-shrink-0 flex flex-wrap gap-2 items-center self-end md:self-start">
         {
           price !== undefined ? (
-            <span class="inline-flex items-center px-4 py-1.5 rounded-full text-base font-bold bg-emerald-600 text-white shadow-md">
+            <span class="inline-flex items-center px-6 py-2.5 rounded-full text-xl font-black bg-[var(--color-primary)] text-white shadow-premium group-hover:scale-105 transition-transform">
               S/ {price.toFixed(2)}
             </span>
           ) : prices ? (
-            <div class="flex flex-wrap gap-2">
+            <div class="flex flex-wrap gap-3">
               {[
                 { label: 'Pers.', value: prices.personal },
                 { label: 'Med.', value: prices.mediano },
                 { label: 'Fam.', value: prices.familiar }
               ].map(item => item.value !== undefined && (
-                <div class="inline-flex flex-col items-center px-3 py-1 rounded-lg bg-white border border-emerald-200 shadow-sm min-w-[70px]">
-                  <span class="text-[10px] uppercase tracking-wider text-slate-500 font-bold">{item.label}</span>
-                  <span class="text-sm font-bold text-emerald-700">S/ {item.value}</span>
+                <div class="inline-flex flex-col items-center px-4 py-2 rounded-2xl bg-white border border-[var(--color-accent)]/30 shadow-sm min-w-[85px] group-hover:border-[var(--color-primary)]/30 transition-colors">
+                  <span class="text-[10px] uppercase tracking-widest text-[var(--color-text-soft)] font-black">{item.label}</span>
+                  <span class="text-base font-bold text-[var(--color-primary-dark)]">S/ {item.value}</span>
                 </div>
               ))}
             </div>

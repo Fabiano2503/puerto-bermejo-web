@@ -7,7 +7,7 @@
       { "name": "Chicharrón de Pota", "price": 30 },
       { "name": "Choritos a la Chalaca (1/2 docena)", "price": 25 },
       { "name": "Causa de Atún", "price": 18 },
-      { "name": "Causa de Langostinos", "price": 25 },
+      { "name": "Causa de Langostinos", "price": 25, "image": "/images/menu/causa-langostinos.webp" },
       { "name": "Causa de Pulpo al Olivo", "price": 25 },
       { "name": "Causa de Pulpa de Cangrejo", "price": 28 },
       {
@@ -54,7 +54,7 @@
       { "name": "Arroz con Conchas Negras", "price": 40 },
       { "name": "Arroz Chaufa de Pescado", "prices": { "personal": 30, "mediano": 50 } },
       { "name": "Arroz Chaufa de Mariscos", "prices": { "personal": 30, "mediano": 60 } },
-      { "name": "Arroz a la Norteña", "price": 35 },
+      { "name": "Arroz a la Norteña", "price": 35, "image": "/images/menu/arroz-a-la-norteña.webp" },
       { "name": "Tortilla de Mariscos", "price": 30 },
       { "name": "Tortilla de Langostinos", "price": 35 },
       { "name": "Pescado a la Plancha", "price": 30 },
@@ -132,7 +132,7 @@
       { "name": "Combo 01: Ceviche + Chicharrón + Arroz con Mariscos", "price": 25 },
       { "name": "Combo 02: Ceviche + Arroz Chaufa + Chicharrón", "price": 30 },
       { "name": "Dúo Marino: Ceviche + Chicharrón de Pescado", "price": 30 },
-      { "name": "Trío Marino: Ceviche + Causa + Jalea", "price": 40 },
+      { "name": "Trío Marino: Ceviche + Causa + Jalea", "price": 40, "image": "/images/menu/trio-marino.webp" },
       {
         "name": "Buffet Marino",
         "description": "Causa + Arroz + Tiradito + Ceviche + Jalea",

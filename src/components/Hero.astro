@@ -4,34 +4,53 @@ const whatsappMessage = 'Hola Cevichería Puerto Bermejo, quisiera hacer un pedi
 const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 ---
 
-<section class="bg-gradient-to-br from-emerald-600 to-emerald-700 text-white py-16 md:py-24">
-  <div class="max-w-6xl mx-auto px-4 text-center">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4">
-      Cevichería Puerto Bermejo
-    </h1>
-    <p class="text-xl md:text-2xl mb-8 text-emerald-100">
-      El mejor sabor del mar, fresco y delicioso
-    </p>
-    <p class="text-lg mb-10 max-w-2xl mx-auto text-emerald-50">
-      Disfruta de nuestros ceviches, tiraditos y mariscos preparados con los ingredientes más frescos del día.
-    </p>
+<section class="relative bg-[var(--color-bg)] py-12 md:py-24 overflow-hidden border-b border-[var(--color-accent)]/10">
+  <div class="max-w-6xl mx-auto px-4 text-center flex flex-col items-center">
+
+    <!-- Logo & Branding -->
+    <div class="animate-fade-in opacity-0 [animation-delay:400ms] mb-6 flex flex-col items-center">
+      <div class="relative group">
+        <div class="absolute -inset-1 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)] rounded-full blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+        <img 
+          src="/images/logo.png" 
+          alt="Cevichería Puerto Bermejo"
+          class="relative h-32 md:h-44 w-auto object-contain drop-shadow-xl"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+      
+      <div class="mt-6 text-center">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-[var(--color-primary)] tracking-tight mb-3">
+          Puerto <span class="text-[var(--color-primary-dark)]">Bermejo</span>
+        </h1>
+        <p class="text-lg md:text-xl font-medium text-[var(--color-text-soft)] max-w-xl mx-auto leading-relaxed">
+          Tradición y frescura en cada bocado. <br class="hidden md:block" /> El auténtico sabor del mar peruano.
+        </p>
+      </div>
+    </div>
     
-    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-      <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" 
-         class="inline-flex items-center gap-3 bg-white hover:bg-emerald-50 text-emerald-700 font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-6 h-6" fill="currentColor">
+    <!-- CTAs -->
+    <div class="animate-fade-in opacity-0 [animation-delay:600ms] flex flex-col sm:flex-row gap-5 justify-center items-center w-full max-w-lg mt-4">
+      <a 
+        href={whatsappUrl} 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="group w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[var(--color-whatsapp)] hover:bg-[#20bd5b] text-white font-bold px-10 py-4.5 rounded-full shadow-lg shadow-green-200 transition-all transform hover:-translate-y-1 active:scale-95 text-lg"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-6 h-6 fill-current transition-transform group-hover:scale-110">
           <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.5-11.3 2.5-2.5 5.6-6.5 8.3-9.7 2.8-3.3 3.7-5.6 5.6-9.3 1.9-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.7 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
         </svg>
-        ¡Pedir mi ceviche ahora!
+        Hacer pedido por WhatsApp
       </a>
 
       <a
         href="#menu"
-        class="group inline-flex items-center gap-2 border-2 border-white/40 hover:border-white bg-white/5 hover:bg-white/10 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 hover:-translate-y-1 active:scale-95 shadow-lg"
+        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border-2 border-[var(--color-primary)] text-[var(--color-primary)] font-bold px-10 py-4.5 rounded-full hover:bg-[var(--color-primary)] hover:text-white transition-all duration-300 transform hover:-translate-y-1 active:scale-95 text-lg"
       >
-        Ver menú
+        Explorar Carta
         <svg
-          xmlns="http://w3.org"
+          xmlns="http://www.w3.org/2000/svg"
           class="w-5 h-5 transition-transform duration-300 group-hover:translate-y-1"
           fill="none"
           viewBox="0 0 24 24"
@@ -41,5 +60,6 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(w
         </svg>
       </a>
     </div>
+
   </div>
 </section>

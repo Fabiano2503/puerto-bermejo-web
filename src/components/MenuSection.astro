@@ -3,27 +3,27 @@ import carta from "../data/carta.json"
 import MenuItem from "./MenuItem.astro";
 ---
 
-<section id="menu" class="scroll-mt-15 max-w-4xl mx-auto px-4 py-8">
-  <div class="text-center mb-8">
-    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
-      Nuestro Menú
+<section id="menu" class="scroll-mt-12 max-w-6xl mx-auto px-4 py-16 md:py-24">
+  <div class="text-center mb-16 animate-fade-in opacity-0">
+    <h2 class="text-4xl md:text-6xl font-black text-[var(--color-primary)] mb-4 tracking-tight">
+      Nuestra <span class="text-[var(--color-accent)]">Carta</span>
     </h2>
-    <p class="text-lg text-slate-600">
-      Descubre los sabores más frescos del mar
+    <div class="w-24 h-1.5 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)] mx-auto rounded-full mb-6"></div>
+    <p class="text-lg md:text-2xl text-[var(--color-text-soft)] max-w-2xl mx-auto font-medium leading-relaxed">
+      Una selección de los mejores ingredientes marinos, <br class="hidden md:block" /> preparados con pasión y frescura.
     </p>
   </div>
 
+  <!-- Categorías Sticky Nav -->
   <div
-    class="sticky top-[60px] z-40 bg-slate-50/95 backdrop-blur-sm py-4 mb-8 -mx-4 px-4 border-b border-slate-200 shadow-sm"
+    class="sticky top-[60px] z-40 bg-[var(--color-bg)]/80 backdrop-blur-xl py-6 mb-16 -mx-4 px-4 border-y border-[var(--color-accent)]/10 shadow-sm"
   >
-    <div class="flex overflow-x-auto gap-3 pb-2 snap-x hide-scrollbar">
+    <div class="flex overflow-x-auto gap-4 pb-2 snap-x hide-scrollbar max-w-5xl mx-auto justify-start md:justify-center">
       {
         carta.map((category) => (
           <a
-            href={`#cat-${category.category
-              .replace(/\\s+/g, "-")
-              .toLowerCase()}`}
-            class="snap-start whitespace-nowrap px-4 py-2 bg-white border border-slate-200 rounded-full text-slate-700 font-medium hover:bg-emerald-50 hover:text-emerald-700 hover:border-emerald-200 transition-colors shadow-sm text-sm"
+            href={`#cat-${category.category.replace(/\s+/g, "-").toLowerCase()}`}
+            class="snap-start whitespace-nowrap px-8 py-3 bg-white border border-[var(--color-accent)]/20 rounded-full text-[var(--color-text-soft)] font-bold hover:text-[var(--color-primary)] hover:border-[var(--color-primary)] hover:shadow-md transition-all text-sm uppercase tracking-widest"
           >
             {category.category}
           </a>
@@ -32,29 +32,34 @@ import MenuItem from "./MenuItem.astro";
     </div>
   </div>
 
-  <div class="space-y-12">
+  <!-- Lista de Platos -->
+  <div class="space-y-24">
     {
       carta.map((category) => (
         <div
-          id={`cat-${category.category.replace(/\\s+/g, "-").toLowerCase()}`}
-          class="scroll-mt-40"
+          id={`cat-${category.category.replace(/\s+/g, "-").toLowerCase()}`}
+          class="scroll-mt-52 group"
         >
-          <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-3">
-            <span class="w-8 h-1.5 bg-sky-400 rounded-full" />
-            {category.category}
-          </h3>
-          <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-2 sm:p-4">
-            <div class="divide-y divide-slate-100">
-              {category.items.map((item) => (
-                <MenuItem
-                  name={item.name}
-                  price={item.price}
-                  prices={item.prices}
-                  description={item.description}
-                  image={(item as any).image}
-                />
-              ))}
-            </div>
+          <div class="flex flex-col md:flex-row items-center gap-6 mb-10">
+            <h3 class="text-3xl md:text-4xl font-black text-[var(--color-primary)] uppercase tracking-tighter shrink-0">
+              {category.category}
+            </h3>
+            <div class="h-0.5 flex-1 bg-gradient-to-r from-[var(--color-accent)]/30 to-transparent rounded-full" />
+            <span class="hidden md:block text-[var(--color-accent)] font-black text-sm uppercase tracking-[0.3em]">
+              Puerto Bermejo
+            </span>
+          </div>
+          
+          <div class="grid grid-cols-1 gap-4">
+            {category.items.map((item) => (
+              <MenuItem
+                name={item.name}
+                price={item.price}
+                prices={item.prices}
+                description={item.description}
+                image={(item as any).image}
+              />
+            ))}
           </div>
         </div>
       ))
